@@ -15,11 +15,16 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
 	param_high = c(param_high, strong_features_params)
 
     low  <- generate_ts_with_target(n = num_sample, ts.length = length,
-    								freq = 1, seasonal = 0,features = feature,
-    								selected.features = selected, target = param_low)
+    								freq = 24, seasonal = 0,
+                                    features = feature_class_strong_default,
+    								selected.features = selected_features,
+                                    target = param_low)
+    
     high <- generate_ts_with_target(n = num_sample, ts.length = length,
-    								freq = 1, seasonal = 0,features = feature, 
-    								selected.features = selected, target = param_high)
+    								freq = 24, seasonal = 0,
+                                    features = feature_class_strong_default, 
+    								selected.features = selected_features, 
+                                    target = param_high)
 
     # integrate and save to csv file
 
@@ -47,19 +52,10 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
 
 	
 
-
-
-# **Dominant**
-
-# max_var_shift - 77 max_var_shift
-# max_kl_shift - 73 max_kl_shift
-# seas_pacf - 0.01 pacf_features
-# seasonal_strength - 190 stl_features
-
 # general settings ---------------------------------------------
 
-num_sample <- 10    # sample for each low and high
-length     <- 50    # time length of each sample 
+num_sample <- 20  # sample for each low and high
+length     <- 200    # time length of each sample 
 
 
 # by feature ---------------------------------------------------
