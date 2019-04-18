@@ -54,7 +54,7 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
 
 # general settings ---------------------------------------------
 
-num_sample <- 20  # sample for each low and high
+num_sample <- 100  # sample for each low and high
 length     <- 200    # time length of each sample 
 
 
