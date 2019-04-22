@@ -26,6 +26,6 @@ features_for_ts_features   <- c("length", "max_var_shift",
 				                "pacf_features", "stl_features", 
 				                "max_level_shift", "max_kl_shift")
 
-featurelist <- tsfeatures(x, features=features_for_ts_features)
+featurelist <- tsfeatures(output, features=features_for_ts_features)
 write.csv(featurelist, file="test-measurement.csv")
 
