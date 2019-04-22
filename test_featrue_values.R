@@ -3,19 +3,19 @@ library("tsfeatures")
 
 
 
-feature_class = c(f"max_var_shift", "max_kl_shift", "pacf_features", "stl_features")
+feature_class = c("max_var_shift", "max_kl_shift", "pacf_features", "stl_features")
 
 selected_features = c("max_var_shift", "max_kl_shift", "seas_pacf", "seasonal_strength")
 
-strong_features_params = c(77, 73, 0.01, 190)
+params = c(77, 73, 0.01, 190)
 
 
 
 output <- generate_ts_with_target(n = 1000, ts.length = 300,
-								freq = 24, seasonal = 1,
-                                features = feature_class, 
-								selected.features = selected_features, 
-                                target = param_high)
+								  freq = 24, seasonal = 1,
+                                  features = feature_class, 
+							      selected.features = selected_features, 
+                                  target = params)
 
 
 write.csv(x, file="test-generated.csv")
