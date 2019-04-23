@@ -18,12 +18,12 @@ output <- generate_ts_with_target(n = 1000, ts.length = 300,
                                   target = params)
 
 
-write.csv(output, file="test-generated.csv")
+write.csv(output, file="test-generated-max_var_shift.csv")
 
 # check the feature outputs 
 
 features_for_ts_features   <- c("length", "max_var_shift")
 
 featurelist <- tsfeatures(output, features=features_for_ts_features)
-write.csv(featurelist, file="test-measurement.csv")
+write.csv(featurelist, file="test-measurement-max_var_shift.csv")
 
