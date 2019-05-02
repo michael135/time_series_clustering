@@ -10,7 +10,7 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
 	selected_features = c(selected, "max_var_shift", "max_kl_shift", "seas_pacf", "seasonal_strength")
 	print(feature_class_strong_default)
 	print(selected_features)
-	strong_features_params = c(77, 73, 0.01, 190)
+	strong_features_params = c(77, 73, 0.01, .26)
 	param_low = c(param_low, strong_features_params)
 	param_high = c(param_high, strong_features_params)
 
