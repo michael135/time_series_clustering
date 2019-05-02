@@ -32,7 +32,7 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
     dirname <- "feature_controled_data"
     filename <- paste(dirname, "/","lowhigh_generated-",selected,".csv", sep="" )
     write.csv(x, file=filename)
-
+    print ('finished first file')
     # check the feature outputs 
 
     features_for_ts_features   <- c("length", "max_var_shift", "max_kl_shift",
@@ -42,6 +42,7 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
     featurelist <- tsfeatures(x, features=features_for_ts_features)
     filename <- paste(dirname, "/","featurescheck-",selected,".csv", sep="" )
     write.csv(featurelist, file=filename)
+    print ('finished second file')
 }
 # x <- generate_ts_with_target(n = 1, ts.length = 60, freq = 1, seasonal = 0,
 #                              features = c('entropy', 'stl_features'),
