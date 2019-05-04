@@ -15,13 +15,13 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
 	param_high = c(param_high, strong_features_params)
 
     low  <- generate_ts_with_target(parallel = 20, n = num_sample, ts.length = length,
-    								freq = 24, seasonal = 1,
+    								freq = 24, seasonal = 2,
                                     features = feature_class_strong_default,
     								selected.features = selected_features,
                                     target = param_low)
     
     high <- generate_ts_with_target(parallel=20, n = num_sample, ts.length = length,
-    								freq = 24, seasonal = 1,
+    								freq = 24, seasonal = 2,
                                     features = feature_class_strong_default, 
     								selected.features = selected_features, 
                                     target = param_high)
