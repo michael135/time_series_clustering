@@ -10,18 +10,18 @@ generator <- function(num_sample,length, feature, selected, param_low, param_hig
 	selected_features = c(selected, "max_var_shift", "max_kl_shift", "seas_pacf", "seasonal_strength")
 	print(feature_class_strong_default)
 	print(selected_features)
-	strong_features_params = c(77, 73, 0.01, .26)
+	strong_features_params = c(77, 73, 0.01, 0.26)
 	param_low = c(param_low, strong_features_params)
 	param_high = c(param_high, strong_features_params)
 
-    low  <- generate_ts_with_target(n = num_sample, ts.length = length,
-    								freq = 24, seasonal = 0,
+    low  <- generate_ts_with_target(parallel = 20, n = num_sample, ts.length = length,
+    								freq = 24, seasonal = 1,
                                     features = feature_class_strong_default,
     								selected.features = selected_features,
                                     target = param_low)
     
-    high <- generate_ts_with_target(n = num_sample, ts.length = length,
-    								freq = 24, seasonal = 0,
+    high <- generate_ts_with_target(parallel=20, n = num_sample, ts.length = length,
+    								freq = 24, seasonal = 1,
                                     features = feature_class_strong_default, 
     								selected.features = selected_features, 
                                     target = param_high)
